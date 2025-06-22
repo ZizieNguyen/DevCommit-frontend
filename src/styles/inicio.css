@@ -1,0 +1,621 @@
+/* Estilos para la página de inicio */
+:root {
+  --primary: #007df4;
+  --primary-dark: #0066cc;
+  --secondary: #00c8c2;
+  --secondary-dark: #00a29d;
+  --negro: #1a1b15;
+  --blanco: #FFFFFF;
+  --gris: #64748B;
+  --gris-claro: #F8FAFC;
+  --rojo: rgb(169, 0, 0);
+  --verde: #02db02;
+
+    /* Sombras */
+  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Fuentes */
+  --font-main: 'Outfit', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  --telefono: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --xl-desktop: 1200px;
+}
+
+
+/* Sobre DevCommit */
+.sobre-devcommit {
+  padding: 5rem 0;
+}
+
+.sobre-devcommit__grid {
+  display: grid;
+  gap: 5rem;
+}
+
+@media (min-width: 768px) {
+  .sobre-devcommit__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sobre-devcommit__imagen img {
+  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.sobre-devcommit__texto {
+  line-height: 2;
+  color: var(--gris);
+  text-align: justify;
+}
+
+/* Características */
+.caracteristicas {
+  padding: 2rem 0;
+  background-color: var(--gris-claro);
+}
+
+.caracteristicas__grid {
+  display: grid;
+  gap: 4rem;
+}
+
+@media (min-width: 768px) {
+  .caracteristicas__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.caracteristica {
+  text-align: center;
+  padding: 2rem;
+}
+
+.caracteristica__imagen {
+  margin-bottom: 2rem;
+}
+
+.caracteristica__imagen img {
+  width: 10rem;
+  height: auto;
+}
+
+.caracteristica__titulo {
+  color: var(--primary);
+  font-size: 2.4rem;
+  margin: 1rem 0;
+}
+
+/* Numeros (Estadísticas/Resumen) */
+.numeros {
+  padding: 2rem 0;
+  background-color: #68829e;
+  background-size: cover;
+  background-position: center;
+}
+
+.numeros__grid {
+  display: grid;
+  gap: 5rem;
+}
+
+@media (min-width: 768px) {
+  .numeros__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.numero {
+  text-align: center;
+  color: var(--blanco);
+}
+
+.numero__icono {
+  font-size: 5rem;
+  color: #e2dfa2;
+}
+
+.numero__cantidad {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 1rem 0;
+}
+
+.numero__texto {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Eventos */
+.eventos {
+  padding: 5rem 0;
+}
+
+.eventos__descripcion {
+  text-align: center;
+  color: var(--gris);
+  margin: 0 auto 5rem auto;
+  max-width: 60rem;
+}
+
+.eventos__grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .eventos__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.evento {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: #FFFFFF;
+  transition: transform 0.3s ease;
+}
+
+.evento:hover {
+  transform: translateY(-0.5rem);
+}
+
+.evento__contenido {
+  padding: 2rem;
+}
+
+.evento__fecha {
+  font-size: 1.6rem;
+  color: var(--gris);
+  margin: 0;
+}
+
+.evento__nombre {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: var(--primary);
+}
+
+.evento__descripcion {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.evento__autor {
+  font-weight: 700;
+  color: var(--gris-oscuro);
+  margin: 1rem 0;
+}
+
+.evento__categoria {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--blanco);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.evento__disponibles {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+}
+
+.evento__disponibles-cantidad {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.evento__enlace {
+  display: block;
+  background-color: var(--primary);
+  color: var(--blanco);
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.evento__enlace:hover {
+  background-color: #0056b3;
+}
+
+.eventos__enlace {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Ponentes */
+.ponentes {
+  padding: 5rem 0;
+  background-color: var(--gris-claro);
+}
+
+.ponentes__descripcion {
+  text-align: center;
+  color: var(--gris);
+  margin: 0 auto 5rem auto;
+  max-width: 60rem;
+}
+
+.ponentes__grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .ponentes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .ponentes__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.ponente {
+  background-color: var(--blanco);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.ponente:hover {
+  transform: translateY(-0.5rem);
+}
+
+.ponente__imagen {
+  width: 100%;
+  height: 25rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.ponente__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ponente__contenido {
+  padding: 2rem;
+}
+
+.ponente__nombre {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  color: var(--primary);
+}
+
+.ponente__ubicacion {
+  font-size: 1.4rem;
+  color: var(--gris);
+  margin: 0.5rem 0 1rem 0;
+}
+
+.ponente__tags {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: var(--gris-oscuro);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ponente__enlace {
+  display: block;
+  background-color: var(--primary);
+  color: var(--blanco);
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  margin-top: 2rem;
+}
+
+.ponente__enlace:hover {
+  background-color: #0056b3;
+}
+
+.ponentes__enlace {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* Mapa */
+.mapa {
+  height: 40rem;
+  width: 30%;
+  margin: 2rem auto;
+  
+}
+
+iframe {
+  width: 100%;
+  height: 80%;
+  border: none;
+  border-radius: 1rem;
+}
+
+.mapa__titulo {
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.mapa__titulo span {
+  font-weight: 900;
+  color: var(--primary);
+}
+
+/* Boletos */
+.boletos {
+  padding: 3rem 0;
+  background-color: var(--blanco);
+}
+
+.titulo {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+}
+
+.titulo span {
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.titulo--blanco {
+  color: var(--gris);
+}
+
+.boletos__descripcion {
+  text-align: center;
+  color: var(--blanco);
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+.boletos__grid {
+  display: grid;
+  gap: 5rem;
+}
+
+
+
+@media (min-width: 768px) {
+  .boletos__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.boleto {
+  background-color: var(--blanco);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.boleto::before {
+  content: '';
+  position: absolute;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  top: -20rem;
+  left: -20rem;
+  z-index: 0;
+}
+
+.boleto--presencial {
+  background-color: var(--gris-oscuro);
+  color: var(--blanco);
+}
+
+.boleto--virtual {
+  background-color: #bcbabe;
+  color: var(--gris-oscuro);
+}
+
+.boleto--gratis {
+  background-color: #b3de81;
+  color: var(--gris-oscuro);
+}
+
+.boleto__logo {
+  position: relative;
+  z-index: 1;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: transparent;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.boleto__plan {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+
+.boleto__precio {
+  position: relative;
+  z-index: 1;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 2rem 0;
+}
+
+.boleto__enlace-contenedor {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.boleto__enlace {
+  background-color: var(--primary);
+  color: var(--blanco);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.boleto__enlace:hover {
+  background-color: #0056b3;
+}
+
+/* Contenedor global */
+.contenedor {
+  width: 80%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* Botón general */
+.boton {
+  background-color: var(--primary);
+  color: var(--blanco);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.boton:hover {
+  background-color: #0056b3;
+}
+
+.texto-blanco {
+  color: var(--gris);
+}
+
+
+/* Estilos para Swiper */
+.ponente-card {
+  background-color: var(--blanco);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.ponente-card:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+.ponente-card__imagen {
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+}
+
+.ponente-card__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.ponente-card:hover .ponente-card__imagen img {
+  transform: scale(1.05);
+}
+
+.ponente-card__contenido {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ponente-card__nombre {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.ponente-card__ubicacion {
+  font-size: 1.3rem;
+  color: var(--gris);
+  margin: 0.5rem 0;
+}
+
+.ponente-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.ponente-card__tag {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--blanco);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.ponente-card__tag--more {
+  background-color: var(--gris);
+}
+
+/* Ajustes específicos para Swiper */
+.swiper-slide .ponente-card {
+  height: 100%;
+}
+
+.swiper-slide .ponente-card__imagen {
+  height: 18rem;
+}
+
+/* Ajustar espacio debajo del carrusel */
+.ponentes__swiper {
+  margin-bottom: 2rem;
+}

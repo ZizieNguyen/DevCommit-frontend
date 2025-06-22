@@ -1,0 +1,572 @@
+.eventos {
+  padding: 5rem 0;
+}
+
+.eventos__heading {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.eventos__descripcion {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--gris);
+  max-width: 60rem;
+  margin: 0 auto 3rem auto;
+}
+
+.eventos__grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .eventos__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .eventos__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.eventos__listado {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.eventos__no-eventos {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--gris);
+  padding: 3rem 0;
+}
+
+/* Estilos para filtros */
+.eventos__filtros {
+  background-color: var(--gris-claro);
+  padding: 2rem 0;
+  margin-bottom: 4rem;
+}
+
+.filtros {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.filtros__heading {
+  font-size: 2rem;
+  color: var(--gris-oscuro);
+  margin-bottom: 2rem;
+}
+
+.filtros__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .filtros__grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-end;
+  }
+}
+
+.filtro__label {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--gris-oscuro);
+  margin-bottom: 1rem;
+}
+
+.filtro__select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--gris);
+  border-radius: 0.5rem;
+  background-color: var(--blanco);
+  font-size: 1.6rem;
+}
+
+.filtros__submit {
+  background-color: var(--primary);
+  color: var(--blanco);
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 40%;
+}
+
+.filtros__submit:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Estilos para tarjeta de evento */
+.evento-card {
+  background-color: var(--blanco);
+  border-radius: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.evento-card:hover {
+  transform: translateY(-5px);
+}
+
+.evento-card__categoria {
+  height: 0.5rem;
+  width: 100%;
+}
+
+.evento-card__categoria--1 { background-color: #3498db; }
+.evento-card__categoria--2 { background-color: #e74c3c; }
+.evento-card__categoria--3 { background-color: #2ecc71; }
+.evento-card__categoria--4 { background-color: #f39c12; }
+.evento-card__categoria--5 { background-color: #9b59b6; }
+.evento-card__categoria--0 { background-color: #95a5a6; }
+
+.evento-card__contenido {
+  padding: 2rem;
+}
+
+.evento-card__nombre {
+  font-size: 2rem;
+  color: var(--primary);
+  margin: 0 0 1rem 0;
+}
+
+.evento-card__descripcion {
+  font-size: 1.6rem;
+  color: var(--gris);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.evento-card__autor-hora {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .evento-card__autor-hora {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.evento-card__autor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.evento-card__autor-imagen {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.evento-card__autor-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.evento-card__autor-nombre {
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 600;
+  color: var(--gris-oscuro);
+}
+
+.evento-card__hora {
+  font-size: 1.4rem;
+  color: var(--gris);
+  margin: 0;
+}
+
+.evento-card__dia {
+  font-weight: 700;
+}
+
+.evento-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.evento-card__categorias {
+  font-size: 1.4rem;
+  color: var(--gris-oscuro);
+  background-color: var(--gris-claro);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0;
+}
+
+.evento-card__disponibles {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.evento-card__disponibles--positivo {
+  color: #2ecc71;
+}
+
+.evento-card__disponibles--negativo {
+  color: #e74c3c;
+}
+
+.evento-card__enlace {
+  background-color: var(--secondary);
+  color: var(--blanco);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.evento-card__enlace:hover {
+  background-color: var(--primary-dark);
+}
+
+
+
+/* Paginación */
+.eventos__paginacion {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.paginacion {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.paginacion__enlace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--blanco);
+  color: var(--gris);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: 1px solid var(--gris);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.paginacion__enlace:hover {
+  background-color: var(--primary);
+  color: var(--blanco);
+  border-color: var(--primary);
+}
+
+.paginacion__enlace--actual,
+.paginacion__enlace--actual:hover {
+  background-color: var(--primary);
+  color: var(--blanco);
+  border-color: var(--primary);
+}
+
+/* Estilos para carrusel de eventos */
+.eventos__swiper {
+  width: 100%;
+  padding-bottom: 3rem;
+}
+
+.eventos__swiper .swiper-button-prev,
+.eventos__swiper .swiper-button-next {
+  color: var(--primary);
+}
+
+.eventos__swiper .swiper-pagination-bullet-active {
+  background-color: var(--primary);
+}
+
+/* Estilos para tarjeta de evento en carrusel */
+.swiper-slide .evento-card {
+  height: 100%;
+  background-color: var(--blanco);
+  border-radius: 1rem;
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.swiper-slide .evento-card:hover {
+  transform: translateY(-0.5rem);
+}
+
+.evento-card__categoria {
+  height: 0.5rem;
+  width: 100%;
+}
+
+.evento-card__categoria--1 { background-color: #3498db; }
+.evento-card__categoria--2 { background-color: #e74c3c; }
+.evento-card__categoria--3 { background-color: #2ecc71; }
+.evento-card__categoria--4 { background-color: #f39c12; }
+.evento-card__categoria--5 { background-color: #9b59b6; }
+.evento-card__categoria--0 { background-color: #95a5a6; }
+
+.evento-card__contenido {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.evento-card__fecha {
+  color: var(--gris);
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+}
+
+.evento-card__dia {
+  font-weight: 700;
+}
+
+.evento-card__nombre {
+  font-size: 2rem;
+  color: var(--primary);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.evento-card__descripcion {
+  color: var(--gris-oscuro);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  /* Limitar a 3 líneas con puntos suspensivos */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.evento-card__autor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.evento-card__autor-imagen {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.evento-card__autor-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.evento-card__autor p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.evento-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.evento-card__categoria-texto {
+  background-color: var(--gris-claro);
+  color: var(--gris-oscuro);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.evento-card__disponibles {
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--gris);
+}
+
+.evento-card__disponibles span {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.evento-card__enlace {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: var(--blanco);
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  text-align: center;
+  align-self: center;
+}
+
+.evento-card__enlace:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Estilos para tarjetas de evento compactas en la página de inicio */
+.evento-card--compacto {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blanco);
+  border-radius: 0.7rem;
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  max-height: 42rem;
+}
+
+.evento-card--compacto .evento-card__contenido {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.evento-card--compacto .evento-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.evento-card--compacto .evento-card__fecha {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--gris);
+}
+
+.evento-card--compacto .evento-card__categoria-texto {
+  margin: 0;
+  font-size: 1.1rem;
+  background-color: var(--gris-claro);
+  color: var(--gris-oscuro);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+}
+
+.evento-card--compacto .evento-card__nombre {
+  font-size: 1.8rem;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.2;
+  color: var(--primary);
+  /* Limitar a 2 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.evento-card--compacto .evento-card__descripcion {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--gris);
+  line-height: 1.4;
+  /* Limitar a 3 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.evento-card--compacto .evento-card__autor-compacto {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  color: var(--gris-oscuro);
+}
+
+.evento-card--compacto .evento-card__autor-imagen-compacto {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.evento-card--compacto .evento-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.evento-card--compacto .evento-card__disponibles {
+  font-size: 1.3rem;
+  margin: 0;
+  color: var(--gris);
+}
+
+.evento-card--compacto .evento-card__disponibles-cantidad {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.evento-card--compacto .evento-card__enlace--compacto {
+  background-color: var(--secondary);
+  color: var(--blanco);
+  font-size: 1.3rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.3rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.evento-card--compacto .evento-card__enlace--compacto:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Ajustes para el Swiper */
+.eventos__swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  padding-bottom: 1rem;
+}

@@ -1,0 +1,127 @@
+
+:root {
+  --primary: #007df4;
+  --primary-dark: #0066cc;
+  --secondary: #00c8c2;
+  --secondary-dark: #00a29d;
+  --negro: #1a1b15;
+  --blanco: #FFFFFF;
+  --gris: #64748B;
+  --gris-claro: #F8FAFC;
+  --rojo: rgb(169, 0, 0);
+  --verde: #02db02;
+
+    /* Sombras */
+  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Fuentes */
+  --font-main: 'Outfit', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  --telefono: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --xl-desktop: 1200px;
+}
+/* Encabezados y descripción */
+.paquetes__heading {
+  color: var(--primary);
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  padding: 5rem 0 0 0;
+}
+
+.paquetes__descripcion {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+/* Contenedor principal */
+.paquetes {
+  padding-bottom: 5rem;
+}
+
+/* Grid de boletos en la página de paquetes */
+.paquetes .boletos__grid {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 4rem 2rem 0 2rem;
+}
+
+/* Estilos para las listas dentro de los boletos */
+.boleto .paquete__lista {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  line-height: 1.5;
+  color: inherit;
+  position: relative;
+  z-index: 2;
+}
+
+.boleto .paquete__elemento {
+  margin-bottom: 1rem;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.boleto .paquete__elemento::before {
+  content: "✓";
+  color: #4CAF50;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+}
+
+
+/* Colores de check según el tipo de boleto */
+.boleto--presencial .paquete__elemento::before {
+  color: #9ae3aa;
+}
+
+.boleto--virtual .paquete__elemento::before {
+  color: #333;
+}
+
+.boleto--gratis .paquete__elemento::before {
+  color: #333;
+}
+
+.boleto.boleto--gratis .paquete__elemento.paquete__elemento--no::before {
+  content: "×";  
+  color: var(--rojo) !important; 
+  font-size: 1.8rem;
+  font-weight: 900; 
+}
+
+/* Ajustes para el precio dentro del boleto */
+.boleto .boleto__precio {
+  margin: 2rem 0;
+}
+
+
+.acciones-post-registro {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.acciones-post-registro__boton {
+  display: inline-block;
+  background-color: #1a1b15;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.acciones-post-registro__boton:hover {
+  background-color: #3f3f3f;
+}

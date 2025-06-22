@@ -1,0 +1,160 @@
+.ponente-detalle {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.ponente-no-encontrado {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.ponente-no-encontrado__accion {
+  margin-top: 3rem;
+}
+
+.ponente-no-encontrado__enlace {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--blanco);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.ponente-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.ponente-card__contenido {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .ponente-card__contenido {
+    grid-template-columns: 30rem 1fr;
+  }
+}
+
+.ponente-card__imagen {
+  height: 30rem;
+  position: relative;
+}
+
+.ponente-card__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ponente-card__info {
+  padding: 3rem;
+}
+
+.ponente-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.ponente-card__nombre {
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
+  color: var(--azul);
+  line-height: 1.2;
+}
+
+.ponente-card__ubicacion {
+  font-size: 1.8rem;
+  color: var(--gris);
+  margin: 0;
+}
+
+.ponente-card__volver {
+  color: var(--azul);
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.ponente-card__volver:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.ponente-card__especialidades,
+.ponente-card__biografia,
+.ponente-card__redes {
+  margin-bottom: 3rem;
+}
+
+.ponente-card__subtitulo {
+  font-size: 2rem;
+  color: var(--gris);
+  margin: 0 0 1.5rem;
+  font-weight: 700;
+}
+
+.ponente-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ponente-card__tag {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 1.6rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+}
+
+.ponente-card__texto {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--gris);
+  margin: 0;
+}
+
+.ponente-card__enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ponente-card__red {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.ponente-card__red:hover {
+  opacity: 0.8;
+}
+
+.ponente-card__red--facebook {
+  background-color: #3b5998;
+}
+
+.ponente-card__red--twitter {
+  background-color: #1da1f2;
+}
+
+.ponente-card__red--youtube {
+  background-color: #ff0000;
+}
+
+.ponente-card__red--instagram

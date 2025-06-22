@@ -1,0 +1,75 @@
+:root {
+  --primary: #007df4;
+  --primary-dark: #0066cc;
+  --secondary: #00c8c2;
+  --secondary-dark: #00a29d;
+  --negro: #1a1b15;
+  --blanco: #FFFFFF;
+  --gris: #64748B;
+  --gris-claro: #F8FAFC;
+  --rojo: rgb(169, 0, 0);
+  --verde: #02db02;
+
+    /* Sombras */
+  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Fuentes */
+  --font-main: 'Outfit', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  --telefono: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --xl-desktop: 1200px;
+}
+
+.devcommit__heading {
+  color: var(--primary);
+  font-size: 3rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.devcommit__descripcion {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  margin-top: 0;
+
+}
+
+.devcommit__grid {
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .devcommit__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
+    align-items: center;
+    margin-top: 4rem;
+  }
+}
+
+.devcommit__texto {
+  line-height: 2;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.devcommit__imagen {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.devcommit__imagen img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 0.5rem; 
+  display: block;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
