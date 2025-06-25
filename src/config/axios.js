@@ -2,6 +2,8 @@ import axios from 'axios';
 
 const API_URL = '/api/proxy';
 
+console.log('Configurando axios con baseURL:', '/api/proxy');
+
 export const clienteAxios = axios.create({
   baseURL: API_URL,
   headers: {
@@ -13,6 +15,10 @@ export const clienteAxios = axios.create({
 
 clienteAxios.interceptors.request.use(
   config => {
+    console.log('Axios realizando petición a:', config.url);
+    console.log('Con baseURL:', config.baseURL);
+    console.log('URL completa:', config.baseURL + config.url);
+
     const token = localStorage.getItem('token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;

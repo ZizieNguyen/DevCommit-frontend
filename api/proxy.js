@@ -1,59 +1,42 @@
 export default async function handler(req, res) {
-  // Extraer información de la solicitud
-  const { url, method, headers, query, body } = req;
-  
-  // Construir la URL del backend
+  // Obtener la URL de destino y la ruta de la solicitud
   const targetUrl = 'https://devcommit-backend.wuaze.com/backend/public';
+  // Obtener la ruta después de /api/proxy
+  const path = req.url.replace(/^\/api\/proxy\/?/, '');
+  // Construir URL completa
+  const fullUrl = `${targetUrl}${path ? '/' + path : ''}`;
   
-  // Extraer la ruta solicitada (todo después de /api/proxy)
-  const path = url.replace(/^\/api\/proxy/, '');
-  
-  // Construir la URL completa
-  const fullUrl = `${targetUrl}${path}`;
-  
+  console.log(`Proxy: Redirigiendo ${req.url} a ${fullUrl}`);
+
   try {
     // Configurar opciones para fetch
     const fetchOptions = {
-      method: method || 'GET',
+      method: req.method,
       headers: {
         'Content-Type': 'application/json',
-        // Eliminar cabeceras que podrían causar problemas
-        ...Object.fromEntries(
-          Object.entries(headers).filter(([key]) => 
-            !['host', 'connection', 'content-length'].includes(key.toLowerCase())
-          )
-        )
       }
     };
-    
-    // Agregar body para métodos que lo requieran
-    if (['POST', 'PUT', 'PATCH'].includes(method) && body) {
-      fetchOptions.body = JSON.stringify(body);
+
+    // Añadir body si es necesario
+    if (req.method !== 'GET' && req.method !== 'HEAD' && req.body) {
+      fetchOptions.body = JSON.stringify(req.body);
     }
-    
-    // Realizar la petición al backend
+
+    // Hacer la petición al backend
     const response = await fetch(fullUrl, fetchOptions);
-    
-    // Obtener los datos de respuesta
     const data = await response.text();
+
+    // Configurar cabeceras de respuesta
+    res.setHeader('Content-Type', response.headers.get('Content-Type') || 'application/json');
     
-    // Establecer el código de estado y devolver los datos
-    res.status(response.status);
-    
+    // Intentar parsear como JSON, si falla devolver como texto
     try {
-      // Intentar parsear como JSON
-      const jsonData = JSON.parse(data);
-      res.json(jsonData);
-    } catch{
-      // Si no es JSON válido, devolver como texto
-      res.send(data);
+      res.status(response.status).json(JSON.parse(data));
+    } catch {
+      res.status(response.status).send(data);
     }
   } catch (error) {
     console.error('Error en proxy:', error);
-    res.status(500).json({ 
-      error: true, 
-      message: error.message,
-      details: 'Error al conectar con el backend'
-    });
+    res.status(500).json({ error: `Error en el proxy: ${error.message}` });
   }
 }
