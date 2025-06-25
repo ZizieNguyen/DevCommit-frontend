@@ -6,7 +6,7 @@ export const clienteAxios = axios.create({
     'Content-Type': 'application/json',
     'X-Requested-With': 'XMLHttpRequest'
   },
-  withCredentials: true
+  withCredentials: false
 });
 
 clienteAxios.interceptors.request.use(
