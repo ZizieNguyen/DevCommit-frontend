@@ -205,6 +205,9 @@ export default function HomePage() {
     cargarDatos();
   }, []);
 
+  console.log('API URL:', import.meta.env.VITE_API_URL);
+console.log('API URL fallback:', import.meta.env.VITE_API_URL || 'http://localhost:3000');
+
   return (
     <>
       {/* Sección Sobre DevCommit */}
