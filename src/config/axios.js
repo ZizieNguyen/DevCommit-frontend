@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API_URL = '/api/proxy';
+const API_URL = '/api/proxy/';
 
-console.log('Configurando axios con baseURL:', '/api/proxy');
+console.log('Configurando axios con baseURL:', '/api/proxy/');
 
 export const clienteAxios = axios.create({
   baseURL: API_URL,
