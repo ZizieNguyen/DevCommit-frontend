@@ -111,25 +111,6 @@
   background-size: 1.8rem;
 }
 
-.menu-redes__enlace[href*="facebook.com"]::before {
-  background-image: url('/img/iconos/facebook.svg');
-}
-
-.menu-redes__enlace[href*="twitter.com"]::before {
-  background-image: url('/img/iconos/twitter.svg');
-}
-
-.menu-redes__enlace[href*="youtube.com"]::before {
-  background-image: url('/img/iconos/youtube.svg');
-}
-
-.menu-redes__enlace[href*="instagram.com"]::before {
-  background-image: url('/img/iconos/instagram.svg');
-}
-
-.menu-redes__enlace[href*="github.com"]::before {
-  background-image: url('/img/iconos/github.svg');
-}
 
 .menu-redes__ocultar {
   width: 1px;

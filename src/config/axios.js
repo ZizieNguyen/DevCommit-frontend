@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const API_URL = '/api/proxy';
+
 export const clienteAxios = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000',
+  baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
     'X-Requested-With': 'XMLHttpRequest'
