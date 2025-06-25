@@ -1,15 +1,20 @@
 export default async function handler(req, res) {
-  // Obtener la URL de destino y la ruta de la solicitud
+  // URL base del backend
   const targetUrl = 'https://devcommit-backend.wuaze.com/backend/public';
-  // Obtener la ruta después de /api/proxy
-  const path = req.url.replace(/^\/api\/proxy\/?/, '');
-  // Construir URL completa
-  const fullUrl = `${targetUrl}${path ? '/' + path : ''}`;
   
-  console.log(`Proxy: Redirigiendo ${req.url} a ${fullUrl}`);
+  // 1. Extraer la parte de la URL después de /api/proxy
+  const path = req.url.replace(/^\/api\/proxy\/?/, '');
+  
+  // 2. Eliminar el prefijo "api/" si existe en el path
+  const cleanPath = path.startsWith('api/') ? path.substring(4) : path;
+  
+  // 3. Construir la URL completa, agregando /api/ en el medio
+  const fullUrl = `${targetUrl}/api/${cleanPath}`;
+  
+  console.log(`[Proxy] Redirigiendo: ${req.url} → ${fullUrl}`);
 
   try {
-    // Configurar opciones para fetch
+    // Configuración de la petición
     const fetchOptions = {
       method: req.method,
       headers: {
@@ -17,7 +22,7 @@ export default async function handler(req, res) {
       }
     };
 
-    // Añadir body si es necesario
+    // Añadir body para peticiones POST, PUT, etc.
     if (req.method !== 'GET' && req.method !== 'HEAD' && req.body) {
       fetchOptions.body = JSON.stringify(req.body);
     }
@@ -26,17 +31,16 @@ export default async function handler(req, res) {
     const response = await fetch(fullUrl, fetchOptions);
     const data = await response.text();
 
-    // Configurar cabeceras de respuesta
+    // Devolver la respuesta
     res.setHeader('Content-Type', response.headers.get('Content-Type') || 'application/json');
     
-    // Intentar parsear como JSON, si falla devolver como texto
     try {
       res.status(response.status).json(JSON.parse(data));
     } catch {
       res.status(response.status).send(data);
     }
   } catch (error) {
-    console.error('Error en proxy:', error);
+    console.error('[Proxy] Error:', error);
     res.status(500).json({ error: `Error en el proxy: ${error.message}` });
   }
 }

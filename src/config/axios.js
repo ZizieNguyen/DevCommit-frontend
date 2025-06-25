@@ -15,6 +15,15 @@ export const clienteAxios = axios.create({
 
 clienteAxios.interceptors.request.use(
   config => {
+
+    if (config.url && config.url.startsWith('/api/')) {
+      console.log('Corrigiendo ruta con prefijo duplicado /api/');
+      config.url = config.url.substring(5); 
+    } else if (config.url && config.url.startsWith('api/')) {
+      console.log('Corrigiendo ruta con prefijo duplicado api/');
+      config.url = config.url.substring(4); 
+    }
+
     console.log('Axios realizando petición a:', config.url);
     console.log('Con baseURL:', config.baseURL);
     console.log('URL completa:', config.baseURL + config.url);
