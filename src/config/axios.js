@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const API_URL = '/api/proxy/';
-
-console.log('Configurando axios con baseURL:', '/api/proxy/');
+// Usar la URL de la API desde variables de entorno
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 export const clienteAxios = axios.create({
   baseURL: API_URL,
@@ -13,21 +12,9 @@ export const clienteAxios = axios.create({
   withCredentials: false
 });
 
+// Interceptor para incluir token en todas las peticiones
 clienteAxios.interceptors.request.use(
   config => {
-
-    if (config.url && config.url.startsWith('/api/')) {
-      console.log('Corrigiendo ruta con prefijo duplicado /api/');
-      config.url = config.url.substring(5); 
-    } else if (config.url && config.url.startsWith('api/')) {
-      console.log('Corrigiendo ruta con prefijo duplicado api/');
-      config.url = config.url.substring(4); 
-    }
-
-    console.log('Axios realizando petición a:', config.url);
-    console.log('Con baseURL:', config.baseURL);
-    console.log('URL completa:', config.baseURL + config.url);
-
     const token = localStorage.getItem('token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -37,11 +24,10 @@ clienteAxios.interceptors.request.use(
   error => Promise.reject(error)
 );
 
-// Interceptor para incluir token en todas las peticiones
+// Interceptor para manejar errores de autenticación
 clienteAxios.interceptors.response.use(
   response => response,
   error => {
-
     if (error.response?.status === 401 || error.response?.status === 403) {
       localStorage.removeItem('token');
       window.location.href = '/login';
