@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 // Usar la URL de la API desde variables de entorno
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://hangv1-2425.proyectosdwa.es/backend/public';
 
 export const clienteAxios = axios.create({
   baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
-    'X-Requested-With': 'XMLHttpRequest'
+
   },
   withCredentials: false
 });
